@@ -72,6 +72,8 @@ def wallpaper_slideshow(wallapapers, plugin, timer, lock_screen):
             if is_locked() != True:
                 random_int = random.randint(0, wallpaper_count-1)
                 wallpaper_now = wallapapers[random_int]
+                print(wallpaper_now)
+                newLook = subprocess.check_call(['/home/kritagyadahal/Pictures/ksetwallpaper/newLook.sh', f'{wallpaper_now}'])
                 setwallpaper(wallpaper_now, plugin)
                 if lock_screen == True:
                     set_lockscreen_wallpaper(wallpaper_now, plugin)
